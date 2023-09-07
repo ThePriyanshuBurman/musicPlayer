@@ -1,0 +1,347 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    overflow: hidden;
+}
+
+html {
+    font-size: medium;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.box ul li {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+    margin-bottom: 1.2em;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0.7em solid white;
+    border-left: 0.3em solid transparent;
+    list-style: none;
+    opacity: 0;
+    bottom: 0;
+    left: 10vw;
+    animation: animate1 5s linear infinite;
+}
+
+.box ul li:before,
+.box ul li:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0.6em;
+    left: -1em;
+    border-right: 1em solid transparent;
+    border-bottom: 0.7em solid white;
+    border-left: 1em solid transparent;
+    transform: rotate(-35deg);
+}
+
+.box ul li:after {
+    transform: rotate(35deg);
+}
+
+.box ul li:nth-child(2) {
+    left: 36vw;
+    animation-delay: 2s;
+}
+
+.box ul li:nth-child(3) {
+    left: 22vw;
+    animation-delay: 4s;
+}
+
+.box ul li:nth-child(4) {
+    left: 56vw;
+    animation-delay: 6s;
+}
+
+.box ul li:nth-child(5) {
+    left: 76vw;
+    animation-delay: 4s;
+}
+
+.box ul li:nth-child(6) {
+    left: 80vw;
+    animation-delay: 8s;
+}
+
+@keyframes animate1 {
+    0% {
+        transform: scale(0) rotate(0);
+        opacity: 1;
+        bottom: 0;
+    }
+
+    100% {
+        transform: scale(5) rotate(360deg);
+        opacity: 0;
+        bottom: 100vh;
+    }
+}
+
+.musicContainer {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    width: 350px;
+    height: 520px;
+    box-shadow: 0 12px 30px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 71px;
+    padding: 37px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.musicContainer::before,
+.musicContainer::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(235deg, #ff005e, #e4e6ec, #fbff00);
+    border-radius: 100%;
+    animation: animate 2s linear infinite;
+}
+
+.musicContainer::after {
+    filter: blur(40px);
+}
+.musicContainer #title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgb(124, 30, 23);
+    font-size: 25px;
+    font-weight: 500;
+    margin: 20px 0 5px 0;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.musicContainer #artist {
+    color: rgb(135, 112, 19);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 12px 30px 5px rgba(0, 0, 0, 0.4);
+}
+
+.music_control {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.music_control .fa-solid {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    filter: drop-shadow(0 12px 30px 5px rgba(0, 0, 0, 0.4));
+}
+
+.music_control .main-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music_control .fa-solid:hover {
+    color: gray;
+}
+
+.music_control .fa-play:hover {
+    background-color: aliceblue;
+    color: black;
+    box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.4);
+}
+
+.anime {
+    animation: rotatePlayer 3s linear infinite;
+}
+
+@keyframes rotatePlayer {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progressBar {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.progress {
+    width: 100%;
+    height: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 40px;
+    position: relative;
+    margin-top: 5px;
+    transition: width 1s linear;
+    -moz-transition: width 1s linear;
+    -o-transition: width 1s linear;
+    -webkit-transition: width 1s linear;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: blueviolet;
+    border-radius: 40px;
+    transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    -webkit-transition: all 1s linear;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px; 
+    }
+
+    .box ul li {
+        width: 6px; 
+        height: 6px;
+        margin: 3px; 
+        border-width: 1px; 
+    }
+
+    .box ul li:nth-child(2) {
+        left: 12vw; /* Adjusted position */
+        animation-delay: 2s;
+    }
+
+    .box ul li:nth-child(3) {
+        left: 8vw;
+        animation-delay: 4s;
+    }
+
+    .box ul li:nth-child(4) {
+        left: 20vw; 
+        animation-delay: 6s;
+    }
+
+    .box ul li:nth-child(5) {
+        left: 28vw; 
+        animation-delay: 4s;
+    }
+
+    .box ul li:nth-child(6) {
+        left: 32vw;
+        animation-delay: 8s;
+    }
+
+    .musicContainer {
+        width: 90%;
+        max-width: 320px;
+        margin: 50px auto;
+        padding: 83px;
+        border-radius: 20px;
+    }
+
+    .musicContainer #title {
+        font-size: 18px;
+        margin: 10px 0 15px 0;
+    }
+
+    .musicContainer #artist {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .image {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+    }
+
+    img {
+        box-shadow: 0 8px 20px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .music_control {
+        width: 80%;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .music_control .fa-solid {
+        font-size: 16px;
+    }
+
+    .music_control .main-button {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .progressBar {
+        padding: 5px 0;
+        margin-top: 35px;
+    }
+}
