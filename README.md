@@ -1,11 +1,11 @@
-# musicPlayer 
-https://musicplayer-9ea65.web.app/
+# Music Player 
+
 A basic web music player using HTML, CSS, and JavaScript.
 
-Demo
+# Demo
 You can check out a live demo of the music player here: https://musicplayer-9ea65.web.app/
 
-Features
+# Features
 Play and pause audio.
 Go to the previous and next songs.
 Automatic playback when switching songs.
